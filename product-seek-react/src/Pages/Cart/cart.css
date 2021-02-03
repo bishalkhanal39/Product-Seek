@@ -1,0 +1,24 @@
+.cart-image{
+  height:50px;
+  width:50px;
+}
+
+.cart-image img{
+  height:100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.table tr, .table  td{
+ vertical-align: middle;
+ text-align: center;
+}
+
+.display-flex-justify-center{
+  display: flex;
+  justify-content: center;
+}
+
+i{
+  cursor: pointer;
+}

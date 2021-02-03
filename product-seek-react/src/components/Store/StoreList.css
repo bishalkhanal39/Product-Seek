@@ -1,0 +1,78 @@
+.shop-list{
+  background:white;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+  margin-bottom: 1em;
+}
+
+.shop-image{
+  width:100%;
+  height:250px;
+  overflow: hidden;
+}
+
+.shop-image figure{
+  height:100%;
+  width: 100%;
+  position:relative;
+}
+.shop-image figure figcaption{
+  position: absolute;
+  top:50%;
+  right:27%;
+}
+
+@media(max-width:992px){
+  .shop-image figure figcaption{
+    position: absolute;
+    top:50%;
+    right:35%;
+  }
+}
+.shop-list:hover .shop-image figure img{
+  filter:brightness(30%);
+}
+.shop-image figure figcaption{
+  transform: translateY(1000px);
+  transition: all 0.3s ease;
+}
+.shop-list:hover .shop-image figure figcaption{
+  transform: translateY(0);
+  transition: all 0.3s ease;
+}
+
+.shop-image figure figcaption a{
+  color:white !important;
+  padding:0.5em 1em;
+  border:2px solid white;
+  text-shadow: 0px 0px 7px rgba(255,255,255,0.8)!important;
+  box-shadow: 0px 0px 7px rgba(255,255,255,0.8)!important;
+  text-decoration: none;
+  
+}
+.shop-image figure img{
+  height:100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+
+.shop-details h6{
+  padding:0.5em;
+  display: grid;
+  margin: 0;
+  font-size: 16px;
+  text-align: center;
+}
+
+.shop-details p{
+  padding:0.5em;
+  margin: 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+.shop-details h6::after{
+  content:'\223C \2663 \223D';
+  top:55%;
+  right:50%;
+ }

@@ -1,0 +1,47 @@
+.store-detail-image, .store-detail-image img{
+  width:100%;
+}
+.store-detail-image{
+  position:relative;
+}
+
+.store-location{
+  position:absolute;
+  bottom:2%;
+  left:2%;
+  margin-right: 5px;;
+}
+
+.store-location{
+  padding:0.5em 1em;
+  background:white;
+  color:black;
+}
+.store-location a{
+  color:black;
+  text-decoration:none;
+}
+
+.follower{
+  font-size: 14px !important;
+  border-radius: 0px !important;
+}
+
+.store-detail-list{
+  list-style: none;
+  padding:0;
+  text-align: center;
+}
+
+.store-detail-list li{
+  padding:0.5em 1em;
+}
+
+.store-detail-list li span{
+  font-weight: bold;
+}
+
+
+.store-detail-list li a:hover{
+  text-shadow: 0px 0px 7px rgba(0,0,0,0.5);
+}
