@@ -45,8 +45,6 @@ class Cart extends Component{
                       <th scope="col">Action</th>
                     </tr>
                   </thead>
-
-                  
                     {this.props.cartItems.length?
                     <tbody>{
                     this.props.cartItems.map(item=>{
@@ -97,9 +95,6 @@ class Cart extends Component{
                       </tr>
                       </tbody>
                     }
-                      
-                  
-
                 </table>
               </div>
             </div>

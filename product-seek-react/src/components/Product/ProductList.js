@@ -5,6 +5,8 @@ import * as action from '../../store/actions/index';
 import * as actionTypes from '../../store/actions/actionType';
 import jQuery from 'jquery';
 import Swal from 'sweetalert2';
+import product_store from '../../Pages/Store/StoreDetail/StoreDetail'
+
 const Toast = Swal.mixin({
   toast: true,
   position: 'bottom-end',
@@ -108,7 +110,7 @@ class ProductList extends Component{
                 }
                 
   
-                <div className='product-wishlist'  title='view details'>
+                <div className='product-wishlist'  href='#' title='view details'>
                   <i className='far fa-eye'></i>
                 </div>
   
@@ -116,7 +118,7 @@ class ProductList extends Component{
                 <a className='store' href='#' title="store">
                   <i className='fas fa-store-alt mr-1'></i> 
                   {
-                  /* {this.props.product.product_store[0].name} */
+                    this.props.product.product_store.name
                   }
                 </a>
   
@@ -136,7 +138,7 @@ class ProductList extends Component{
           <div className="product-details">
       <h5 className="text-center" ><a href="#">{this.props.product.title}</a></h5>
   
-              <p className="price"><span>Price : </span>$ {this.props.product.price}</p>
+              <p className="price"><span>Price : </span>Rs. {this.props.product.price}</p>
           </div>
         </div>
       )

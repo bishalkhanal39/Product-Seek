@@ -50,7 +50,7 @@ class  Navbar extends Component{
     return(
       <nav>
         <div className="row"> 
-        <Logo/>
+        <Logo />
           <ul className="nav">
             <li><Link to="/">Home</Link> </li>
             <li><Link to="/about">About</Link> </li>

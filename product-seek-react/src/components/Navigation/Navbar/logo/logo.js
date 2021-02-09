@@ -4,7 +4,7 @@ import './logo.css';
 const Logo = ()=>{
   return(
     <div className='Logo'>
-      <img src={require('./product-seek-logo.png')} alt=""/>
+      <a href="/"><img src={require('./product-seek-logo.png')} alt=""/></a>
     </div>
   )
 }
