@@ -28,7 +28,7 @@ const reducer = (state = initialState ,action)=>{
         const updateTotal= (cartItems)=>{
           let ItemsPriceQuantity = []
             if(cartItems.length){
-              cartItems.map(item=>{
+              cartItems.forEach(item=>{
                 ItemsPriceQuantity.push({
                   price:item.product.price,
                   quantity:item.quantity
@@ -56,7 +56,7 @@ const reducer = (state = initialState ,action)=>{
       case actionTypes.INCREASE_QUANTITY:
          const quantityIncrease= ()=>{
            let cartItems=state.cartItems
-           cartItems.map(item=>{
+           cartItems.forEach(item=>{
              if(item.product.id===action.productID){
                 item.quantity++;
                 item.total=item.quantity*item.product.price
@@ -74,7 +74,7 @@ const reducer = (state = initialState ,action)=>{
       case actionTypes.DECREASE_QUANTITY:
         const quantityDecrease= ()=>{
 
-          state.cartItems.map(item=>{
+          state.cartItems.forEach(item=>{
             if(item.product.id===action.productID){
                item.quantity--;
                item.total=item.quantity*item.product.price
@@ -94,7 +94,7 @@ const reducer = (state = initialState ,action)=>{
 
       case actionTypes.REMOVE_FROM_CART:
         const removeItem= ()=>{
-          state.cartItems.map(item=>{
+          state.cartItems.forEach(item=>{
             if(item.product.id===action.productID){
               let index=state.cartItems.indexOf(item)
               state.cartItems.splice(index,1)

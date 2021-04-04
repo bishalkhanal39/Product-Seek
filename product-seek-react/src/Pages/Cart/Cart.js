@@ -77,6 +77,13 @@ class Cart extends Component{
                                removefromcart(item.product.id)
                               }
                             }>
+                              <i className='fas fa-eye mr-1'></i>View
+                            </button>
+                            <button className="btn btn-danger remove" onClick={
+                              ()=>{
+                               removefromcart(item.product.id)
+                              }
+                            }>
                               <i className='fas fa-times mr-1'></i>Remove
                             </button>
                           </td>

@@ -1,10 +1,11 @@
 import React from 'react';
 import './logo.css';
+import logo from './product-seek-logo.png'
 
 const Logo = ()=>{
   return(
     <div className='Logo'>
-      <a href="/"><img src={require('./product-seek-logo.png')} alt=""/></a>
+      <a href="/"><img src={logo} alt=""/></a>
     </div>
   )
 }

@@ -20,6 +20,9 @@ import Swal from 'sweetalert2';
 // })
 
 class  Navbar extends Component{
+  searchHandler=(clue)=>{
+
+  }
   render(){
 
     // logout function
@@ -55,9 +58,15 @@ class  Navbar extends Component{
             <li><Link to="/">Home</Link> </li>
             <li><Link to="/about">About</Link> </li>
             <li><Link to="/store">Store</Link> </li>
-            <li><Link to="/shop">Shop</Link> </li>
+            {/* <li><Link to="/shop">Shop</Link> </li> */}
             <li><Link to="/contact">Contact</Link> </li>
-          </ul>
+
+        
+          <form className="form-inline my-2 my-lg-0">
+            <input className="form-control mr-sm-2" type="search"
+            placeholder="Search" aria-label="Search" id="clue" onSubmit={this.searchHandler}/>
+            
+          </form>
 
           { this.props.authenticated ?
           <ul className="nav ml-auto">
@@ -71,6 +80,7 @@ class  Navbar extends Component{
               <li><a  href="#" data-toggle="modal" data-target="#signup-modal"><i className="far fa-gem mr-1"></i> Sign up</a> </li>
             </ul>
         }
+          </ul>
          
         </div>
         

@@ -5,7 +5,7 @@ import * as action from '../../store/actions/index';
 import * as actionTypes from '../../store/actions/actionType';
 import jQuery from 'jquery';
 import Swal from 'sweetalert2';
-import product_store from '../../Pages/Store/StoreDetail/StoreDetail'
+// import product_store from '../../Pages/Store/StoreDetail/StoreDetail'
 
 const Toast = Swal.mixin({
   toast: true,
@@ -54,7 +54,7 @@ class ProductList extends Component{
       const isInCart = (productID) =>{
         if(this.props.cartItems.length){
           let cartProductsIds=[]
-          this.props.cartItems.map(item=>{
+          this.props.cartItems.forEach(item=>{
             cartProductsIds.push(item.product.id);
           })
 

@@ -60,7 +60,7 @@
 		  <div class="modal-dialog modal-lg" role="document">
 		    <div class="modal-content">
 		      <div class="modal-header">
-		      	<h5 class="modal-title" v-if='editMode'id="exampleModalLongTitle">Edit Product</h5>
+		      	<h5 class="modal-title" v-if='editMode' id="exampleModalLongTitle">Edit Product</h5>
 		        <h5 class="modal-title" v-else id="exampleModalLongTitle">Add new Product</h5>
 		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 		          <span aria-hidden="true">&times;</span>
@@ -83,14 +83,14 @@
 					        <label for="category">Category</label>
 				        	<select class="form-control" required v-model='form.category_id'>
 				        		<option value="" selected disabled> Select category </option>
-				        		<option v-for='cat in categories':key='cat.id' :value="cat.id"> {{ cat.name }} </option>
+				        		<option v-for='cat in categories' :key='cat.id' :value="cat.id"> {{ cat.name }} </option>
 				        	</select>
 				        </div>
 				        <div class="col-md-6 form-group">
 					        <label for="store">Store</label>
 				        	<select class="form-control" required v-model='form.store_id'>
 				        		<option value="" selected disabled> Select Store </option>
-				        		<option v-for='s in stores':key='s.id' :value="s.id"> {{ s.name }} </option>
+				        		<option v-for='s in stores' :key='s.id' :value="s.id"> {{ s.name }} </option>
 				        	</select>
 				        </div>
 				        <div class="col-md-12">
@@ -100,16 +100,16 @@
 							     	</div>
 										<div class="card-body">
 								     	<div class="row m-auto" v-if='form.product_image.length'>
-								     		<div class="p-image" v-for='img,index in form.product_image'>
+								     		<div class="p-image" :key='img.index' v-for='img, index in form.product_image'>
 								     			<figure>
-									     			<img :src="img"alt="">
+									     			<img :src="img" alt="">
 									     			<figcaption @click='removeImg(index)'>
 									     				<i class="fas fa-times"></i>
 									     			</figcaption>
 								     			</figure>
 								     		</div>	
 								     	</div>
-								     	<p style='margin:0;'v-else>Add some product images</p>
+								     	<p style='margin:0;' v-else>Add some product images</p>
 							     	</div>
 							     	<div class="card-footer">
 							     		<div class="row">
@@ -142,7 +142,7 @@
 
 				        <div class="col-md-12">
 				        	<label for="description">Description</label>
-				        	<textarea name="description" class='form-control' rows="10" v-model='form.description':class="{ 'is-invalid': form.errors.has('description') }"></textarea>
+				        	<textarea name="description" class='form-control' rows="10" v-model='form.description' :class="{ 'is-invalid': form.errors.has('description') }"></textarea>
 				        	<has-error :form="form" field="description"></has-error>
 				        </div>
 				       

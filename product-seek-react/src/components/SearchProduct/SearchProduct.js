@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import ProductList from '../../components/Product/ProductList';
 import axios from '../../axios';
 
-class Home extends Component{
+class SearchProduct extends Component{
   state={
     products:[],
     loading:true,
@@ -21,16 +21,16 @@ class Home extends Component{
     this.loadProducts();
   }
 
-  render(){
+  render(props){
     return(
       <div className='pt-4'>
         <div className='container'>
-        <h3 className="text-center">Our latest Products<hr/></h3>
+        <h3 className="text-center">{props.clue}<hr/></h3>
         {this.state.loading? <p className="text-center">Loading...</p>: ""}
           <div className='row'>
             {this.state.products.map(product=>{
                 return (
-                  <div className='col-md-4'  key={product.id}>
+                  <div className='col-md-3'  key={product.id}>
                     <ProductList  product={product} />
                   </div>
                   )
@@ -43,4 +43,4 @@ class Home extends Component{
   }
 }
 
-export default Home;
+export default SearchProduct;
