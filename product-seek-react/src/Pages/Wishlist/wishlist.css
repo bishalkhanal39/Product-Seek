@@ -1,0 +1,18 @@
+.wishlist-image{
+  width:80px;
+  height:100px;
+}
+.wishlist-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.table tr,.table td{
+  vertical-align: middle !important;
+}
+
+.remove{
+  font-size:14px !important;
+  border-radius: 0!important;
+} 

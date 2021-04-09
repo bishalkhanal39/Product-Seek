@@ -1,0 +1,9 @@
+.login h6,.login label,.login button{
+  font-size:13px;
+  text-align:center;
+}
+
+
+.login input,.login button{
+  border-radius:0px;
+}

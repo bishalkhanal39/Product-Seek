@@ -1,0 +1,40 @@
+body{
+  font-family: 'Poppins', sans-serif !important;
+  font-size:15px !important;
+}
+
+.anchor-btn{
+  cursor:pointer;
+}
+.swal2-styled{
+  border-radius: 0 !important;
+}
+.hr{
+  border-bottom: 2px solid #080808;
+}
+
+a,a:hover{
+  color:black !important;
+  text-decoration: none !important;
+}
+
+
+
+.wishlist-image{
+  width:80px;
+  height:100px;
+}
+.wishlist-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.table tr,.table td{
+  vertical-align: middle !important;
+}
+
+.remove{
+  font-size:14px !important;
+  border-radius: 0!important;
+} 

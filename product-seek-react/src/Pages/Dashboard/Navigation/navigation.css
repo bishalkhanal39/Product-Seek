@@ -1,0 +1,15 @@
+.dashboard-menu{
+  list-style: none;
+  padding:0;
+}
+
+
+.dashboard-menu li{
+  padding:0.5em 1em;
+  background:black;
+  border:1px solid white;
+}
+
+.dashboard-menu li a {
+  color:white !important;
+}
