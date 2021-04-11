@@ -12,7 +12,7 @@ class search extends Model
    protected $table= 'search';
 
   public function userSearch(){
-   	return $this->belongsTo(User::class);
+   	return $this->belongsToMany(User::class);
   }
 
 }

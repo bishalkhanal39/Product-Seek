@@ -24,6 +24,9 @@ Route::post('/forgot_password', 'API\Authcontroller@forgot_password');
 //  Route::post('change_password', 'API\Authcontroller@change_password');
 // });
 
+Route::post('/user/interest','API\APIcontroller@interests');//store interest
+
+Route::get('/user/interest/{id}','API\APIcontroller@interest_get');//get interest
 
 Route::post('/register','API\Authcontroller@register');//api route for register
 
@@ -129,3 +132,5 @@ Route::get('/review/delete/{review_id}','API\ReviewController@delete_review');
 Route::put('/review/update/{review_id}','API\ReviewController@update_review');
 
 Route::get('/reviews-user-product/','API\ReviewController@get_review_product_user');
+
+Route::get('/filter','API\Apicontroller@filter_by_content');
