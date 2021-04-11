@@ -50,6 +50,8 @@ Route::get('/categories/show/{id}','API\APIcontroller@show_category');
 
 Route::get('/stores','API\APIcontroller@stores');//api route for all stores
 
+Route::get('/products/might_like','API\APIcontroller@might_like_products');//api route for might like products
+
 
 Route::get('/stores/show/{id}','API\APIcontroller@show_store');
 //api route for products store by id
@@ -67,6 +69,10 @@ Route::post('/feedback/create','API\FeedbackController@store');//create feedback
 Route::put('/feedback/update/{id}','API\FeedbackController@update');//update feedback
 
 Route::get('/feedback/{user_id}','API\FeedbackController@getFeedback');//update feedback
+
+Route::get('/feedback/delete/{id}','API\FeedbackController@delete_feedback');//delete feedback
+
+Route::get('/search/delete/{id}','API\SearchController@delete_search');//delete search
 
 Route::post('/search/create','API\SearchController@store');//create search_term
 

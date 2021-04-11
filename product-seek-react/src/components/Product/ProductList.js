@@ -112,8 +112,8 @@ class ProductList extends Component{
                 
   
                 <div className='product-wishlist'  title='view details'>
-                 <Link to={'/product-detail/'+this.props.product.id} title="view product" >
-                   <i className='far fa-eye'></i>
+                 <Link to={'/product-detail/'+this.props.product.id} title="view product">
+                   <i className='far fa-eye'  style={{color: "white"}}></i>
                   </Link>
                 </div>
   

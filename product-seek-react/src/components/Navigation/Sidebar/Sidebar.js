@@ -56,7 +56,13 @@ class Sidebar extends Component {
             })
         }).catch()
     }
-
+// search=(data)=>{
+//     axios.post('/search/create',  {
+//         search_term: data
+//     }).then(res=>{
+//         console.log(res.status);
+//     })
+// }
     componentDidMount() {
         this.loadCategory();
         this.loadStore();
@@ -69,7 +75,7 @@ class Sidebar extends Component {
                 <hr className="mb-2" />
                 <form className="form-inline align-text-bottom offset-sm-5">
                     <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
-                        // onChange={(e)=>search(e.target.value)} 
+                        // onChange={(e)=>this.search(e.target.value)} 
                     />
                 </form>
                 <div className="row">

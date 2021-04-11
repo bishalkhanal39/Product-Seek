@@ -50,6 +50,7 @@ class UserTableSeeder extends Seeder
 			'email'        =>'rajesh.sanjyal@gmail.com',
 			'phone_number' =>'9868549759',
 			'address'      =>'Kailali Nepal',
+			'interest'		=>'Kitchen',
 			'role'				 =>'user',
 			'password'		 =>'12345'
 		],
@@ -62,6 +63,7 @@ class UserTableSeeder extends Seeder
       		'email'        =>$user['email'],
       		'phone_number' =>$user['phone_number'],
       		'address'      =>$user['address'],
+			  'interest'=>$user['interest'],
       		'role'				 =>$user['role'],
       		'password'		 =>Hash::make($user['password'])
 	      ]);

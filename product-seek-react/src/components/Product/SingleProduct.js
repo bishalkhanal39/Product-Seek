@@ -1,27 +1,39 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from '../../axios';
+import ProductList from './ProductList';
 class SingleProduct extends Component {
     state = {
-        singleProduct: '',
-        product_category:'',
-        product_store:'',
-        loading: true
+        singleProduct: {},
+        product_category: {},
+        product_store: {},
+        loading: true,
+        products: {}
+    }
+    loadMightLike = () => {
+        axios.get('/products/might_like').then(response => {
+            const products = response.data;
+            this.setState({
+                products: products,
+                loading: false,
+            })
+        })
     }
 
-
-    componentDidMount() {
+    loadSingleProduct = () => {
         axios.get('/product/' + this.props.match.params.id).then(response => {
             this.setState({
                 singleProduct: response.data,
-                product_category:response.data.product_category,
-                product_store:response.data.product_store,
+                product_category: response.data.product_category,
+                product_store: response.data.product_store,
                 loading: false
             })
-        }
-        );
+        }).catch()
     }
-
+    componentDidMount() {
+        this.loadSingleProduct();
+        this.loadMightLike();
+    }
     render() {
         let data;
         if (this.state.loading) {
@@ -31,10 +43,12 @@ class SingleProduct extends Component {
                 <div className="row mt-4">
                     <div className="col-4 mb-3">
                         <div className="card">
-                        {/* <img src={'http://localhost:8000'+(this.state.singleProduct.product_image[0])} alt="" /> */}
+                            <img src={'this.state.singleProduct.product_image[0]'} alt="img" />
+                            {/* <img src={'http://localhost:8000'+(this.props.product.product_image[0])} alt="" /> */}
+
                             {/* <img src={'http://localhost:8000/api/product/'+(this.props.product.id)+'/'+ (this.props.product.product_image[0])} className="card-img-top" /> */}
                             <div className="card-body">
-
+                                {/* <img src={this.state.singleProduct.img}/> */}
                                 <h5 className="card-title">{this.state.singleProduct.title}</h5>
                                 <p className="card-text">Rs. {this.state.singleProduct.price}</p>
                                 <p className="card-text">Description: {this.state.singleProduct.description}</p>
@@ -52,6 +66,29 @@ class SingleProduct extends Component {
         return (
             <>
                 {data}
+                <div className='pt-4'>
+                    <div className='container'>
+                        <h3 className="text-center" style={{ fontWeight: "1000" }}>
+                            You might like
+                            <hr />
+                        </h3>
+                        {this.state.loading?<p className="text-center">Loading...</p>:""}
+                        <div className='row'>
+                            <div className='col-md-3'>
+                            <h1>Might You Like Field</h1>
+                            </div>
+                            
+                            {/* {this.state.products.map((product, key) => { */}
+                                {/* return ( */}
+                                    {/* <div className='col-md-3'> */}
+                                        {/* <ProductList product={product} /> */}
+                                    {/* </div> */}
+                                {/* ) */}
+                            {/* }) */}
+                            {/* }  */} 
+                        </div>
+                    </div>
+                </div>
             </>
         );
     }

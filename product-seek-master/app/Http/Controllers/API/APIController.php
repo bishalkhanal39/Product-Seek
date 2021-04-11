@@ -108,7 +108,20 @@ class APIController extends Controller
   //     ]) / ($this->storeWeight + $this->priceWeight + $this->categoryWeight);
   // }
 
+ // $products        = json_decode(file_get_contents(storage_path('data/products-data.json')));
+    // $selectedId      = intval(app('request')->input('id') ?? '8');
+    // $selectedProduct = $products[0];
 
+    // $selectedProducts = array_filter($products, function ($product) use ($selectedId) { return $product->id === $selectedId; });
+    // if (count($selectedProducts)) {
+    //     $selectedProduct = $selectedProducts[array_keys($selectedProducts)[0]];
+    // }
+
+    // $productSimilarity = new App\ProductSimilarity($products);
+    // $similarityMatrix  = $productSimilarity->calculateSimilarityMatrix();
+    // $products          = $productSimilarity->getProductsSortedBySimularity($selectedId, $similarityMatrix);
+
+    // return view('welcome', compact('selectedId', 'selectedProduct', 'products'));
 
 	// api to get all the products
   public function products(){
@@ -125,21 +138,6 @@ class APIController extends Controller
     }
 
   	return $products;
-
-    // $products        = json_decode(file_get_contents(storage_path('data/products-data.json')));
-    // $selectedId      = intval(app('request')->input('id') ?? '8');
-    // $selectedProduct = $products[0];
-
-    // $selectedProducts = array_filter($products, function ($product) use ($selectedId) { return $product->id === $selectedId; });
-    // if (count($selectedProducts)) {
-    //     $selectedProduct = $selectedProducts[array_keys($selectedProducts)[0]];
-    // }
-
-    // $productSimilarity = new App\ProductSimilarity($products);
-    // $similarityMatrix  = $productSimilarity->calculateSimilarityMatrix();
-    // $products          = $productSimilarity->getProductsSortedBySimularity($selectedId, $similarityMatrix);
-
-    // return view('welcome', compact('selectedId', 'selectedProduct', 'products'));
   }
   // end api to get all the products
 // api to get all the products
@@ -342,6 +340,26 @@ public function single_product($id){
 
     return $reviews;
   }
+  public function  might_like_products(){
+    $products= Product::inRandomOrder()->with('productCategory','productStore')->take(4)->get();
 
-  
+  	foreach ($products as $product){
+  		$product->product_image=unserialize($product->product_image);
+  	}
+
+    foreach ($products as $product){
+      foreach($product->productStore as $store){
+        $store->followers=unserialize($store->followers);
+      }
+    }
+
+  	return $products;
+    // $products= Product::inRandomOrder()->with('productCategory','productStore')->paginate(4);
+
+  	// foreach ($products as $product){
+  	// 	$product->product_image=unserialize($product->product_image);
+  	// }
+    // return Product::inRandomOrder()->paginate(4);
+  	// return $products;
+  }  
 }
