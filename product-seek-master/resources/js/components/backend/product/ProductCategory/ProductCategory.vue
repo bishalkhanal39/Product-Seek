@@ -41,13 +41,7 @@
             		</td>
             	</tr>
             </tbody>
-             <tfoot>
-		            <tr>
-		              <th>Name</th>
-		              <th>No of Products</th>
-		              <th>Action</th>
-		            </tr>
-		          </tfoot>
+            
           </table>
 				</div>
 				<div class="card-footer">

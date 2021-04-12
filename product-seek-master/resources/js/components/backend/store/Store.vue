@@ -31,6 +31,7 @@
                 <th>Action</th>
               </tr>
             </thead>
+			
             <tbody>
             	<tr v-if='!storesLength'>
             		<td colspan="5">Sorry! no data found</td>
