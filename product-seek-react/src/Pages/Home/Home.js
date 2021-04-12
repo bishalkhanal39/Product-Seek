@@ -28,6 +28,7 @@ state = {
     category_products:[],
     store:{},
     store_products:[],
+    interest:{}
   }
   // handleChange=(e)=> {
   //   console.log(e.target.value);
@@ -47,6 +48,9 @@ state = {
       })
     })
   }
+  // loadInterest=()=>{
+
+  // }
   loadStore=()=>{
     axios.get('/stores/show/'+this.props.match.params.id).then(response=>{
       this.setState({
@@ -79,17 +83,18 @@ componentDidMount() {
           <h3 className="text-center" style={{fontWeight:"1000"}}>
 
             Our Products
-            {this.props.authenticated?
+            {/* {this.props.authenticated?
             <>
               
                 <button className="nav-link" data-widget="control-sidebar" data-slide="true" title="sidebar">
                 <i className="fas fa-th-large" onClick={this.sidebarHandler}></i>
               </button>
-          {(this.state.showSidebar)? 
+              {/* {this.props.user.id} */}
+          {/* {(this.state.showSidebar)? 
                 <Sidebar/>
                : null}
             </>
-            :null}
+            :null} */}
             
             <hr />
           </h3>

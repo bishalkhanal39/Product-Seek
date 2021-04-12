@@ -64,7 +64,7 @@ class Navbar extends Component {
           {this.props.authenticated ?
             <ul className="nav ml-auto">
               <li><Link to="/dashboard"><i className="far fa-user mr-1"></i>{this.props.user.name}</Link></li>
-              <li><Link onClick={logout} className='anchor-btn'><i className="fa fa-power-off mr-1"></i>Logout</Link></li>
+              <li><Link to="/" onClick={logout} className='anchor-btn'><i className="fa fa-power-off mr-1"></i>Logout</Link></li>
               <ShoppingCart />
               <Wishlist />
 

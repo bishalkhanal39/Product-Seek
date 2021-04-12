@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from '../../axios';
+import * as config from '../../baseURL';
+
 import ProductList from './ProductList';
 class SingleProduct extends Component {
     state = {
@@ -43,7 +45,10 @@ class SingleProduct extends Component {
                 <div className="row mt-4">
                     <div className="col-4 mb-3">
                         <div className="card">
-                            <img src={'this.state.singleProduct.product_image[0]'} alt="img" />
+                            {/* {this.state.singleProduct.product_image.map(item=>{ */}
+                                {/* item; */}
+                            {/* })} */}
+                            <img src={config.BaseURL+this.state.singleProduct.product_image[0]} alt="img" />
                             {/* <img src={'http://localhost:8000'+(this.props.product.product_image[0])} alt="" /> */}
 
                             {/* <img src={'http://localhost:8000/api/product/'+(this.props.product.id)+'/'+ (this.props.product.product_image[0])} className="card-img-top" /> */}
